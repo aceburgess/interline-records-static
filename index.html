@@ -1,19 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Interline Records</title>
 
-<style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interline Records</title>
 
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
 
-</style>
+    <style>
+        html {
+            height: 100%;
+        }
 
+        body {
+            background-color: black;
+            background: url('./NewYorkCityFromHigh.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            min-height: 100%;
+            position: relative;
+        }
+        .loading {
+            left: 0;
+            top: 0;
+            position: absolute;
+            background-color: black;
+            opacity: 1;
+            height: 100%;
+            width: 100%;
+            padding-top: 5%;
+        }
+        .loading > h1 {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            padding: 0;
+            /*padding-right: 30%;*/
+            text-align: left;
+            font-family: 'Courier New';
+            font-size: 1.3em;
+            color: white;
+            opacity: 0.5;
+            height: 100px;
+            width: 100px;
+        }
+
+        .loading > h1:after {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+            -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+            animation: ellipsis steps(4,end) 900ms infinite;
+            content: "\2026"; /* ascii code for the ellipsis character */
+            width: 2px;
+        }
+
+        .center-content {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            width: 70%;
+            height: 20%;
+        }
+
+        .center-content > img {
+            display: none;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .center-content > h1 {
+            text-align: center;
+            font-family: 'Courier New';
+            display: none;
+            width: 100%;
+            opacity: 0.8;
+            color: white;
+            font-size: 2.7em;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        @keyframes ellipsis {
+            to {
+                width: 1.25em; 
+            }
+        }
+
+        @-webkit-keyframes ellipsis {
+            to {
+                width: 1.25em;
+            }
+        }
+
+    </style>
+
+    <script>
+        var fadeLogo = function(timing){
+        }
+
+        var fadeText = function(fade, delay){
+        }
+
+        var fadeLoop = function(fade, delay){
+            $('.center-content > img').fadeIn(fade).delay(delay).fadeOut(fade, function(){
+                $('.center-content > h1').fadeIn(fade).delay(delay).fadeOut(fade, function(){
+                    fadeLoop(fade, delay);
+                });
+            });
+        }
+
+        $(document).ready(function(){
+            $('.loading').fadeOut(3000, fadeLoop(1500, 2500));
+        })
+    </script>
+    
 </head>
 
 
 
 <body>
-    <div class="background-image">
+    <div class="container">
+        <div class="center-content">
+            <img src="./interline-logo.png" alt="interline-logo"/>
+            <h1>Coming Soon</h1>
+        </div>
+        <div class="loading">
+            <h1>Loading</h1>
+        </div>
     </div>
 </body>
 
