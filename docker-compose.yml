@@ -6,7 +6,6 @@ services:
     build: .
     expose:
       - '8011'
-      - '4331'
     volumes:
       - ./src:/usr/share/nginx/html:ro
       - ./default.conf:/etc/nginx/conf.d/default.conf:ro
