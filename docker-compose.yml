@@ -16,7 +16,7 @@ services:
       - VIRTUAL_HOST=interlinerecords.com,www.interlinerecords.com
       - LETSENCRYPT_HOST=interlinerecords.com,www.interlinerecords.com
       - LETSENCRYPT_EMAIL=info@interlinerecords.com
-      - LETSENCRYPT_TEST=true
+      - LETSENCRYPT_TEST=false
 
 networks:
   proxy:
