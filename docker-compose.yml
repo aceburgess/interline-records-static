@@ -13,7 +13,7 @@ services:
       - proxy
     environment:
       - VIRTUAL_HOST=interlinerecords.com,www.interlinerecords.com
-      - LETSENCRYPT_HOST=interlinerecords.com,www.interlinerecords.com,news.interlinerecords.com
+      - LETSENCRYPT_HOST=interlinerecords.com,www.interlinerecords.com
       - LETSENCRYPT_EMAIL=info@interlinerecords.com
       - LETSENCRYPT_TEST=false
 
